@@ -1,0 +1,540 @@
+* {
+    border: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 700px;
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d3d3d385, #6dd4fa75, #297fb983), url(../imagenes/imagen1.png);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d3d3d385, #6dd4fa75, #297fb983), url(../imagenes/imagen1.png);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+#intro h1 {
+    font-size: 2.5em;
+    /* Ajusta el tamaño de las letras según sea necesario */
+    margin: 0;
+    padding: 50px;
+    /* Ajusta el espaciado interno según sea necesario */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width:768p) {
+    #intro {
+        max-width: 100% !important;
+    }
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    width: 48%;
+    /* Ajusta el ancho según tus preferencias */
+}
+
+h3 {
+    font-size: 1.5em;
+    /* Ajusta el tamaño de la letra según tus preferencias */
+}
+
+p {
+    font-size: 1.2em;
+    /* Ajusta el tamaño de la letra según tus preferencias */
+}
+
+
+/* CARD */
+
+.timeline {
+    position: relative;
+}
+
+.timeline:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background: #d1d1d1;
+}
+
+.timeline-point {
+    position: relative;
+}
+
+.timeline-point:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 3px solid #d1d1d1;
+    background: #fff;
+}
+
+@media(max-width:576px) {
+
+    .timeline:after,
+    .timeline-point:after {
+        display: none;
+    }
+}
+
+.box {
+    height: 150px;
+    background: #737373;
+    border: 1px solid #fff;
+}
+
+
+/* CUERPO PRINCIPAL */
+
+
+.contenido-textos h3 span {
+    background: #4d0686;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-textos a {
+    color: black;
+    transition: all 0.4s linear;
+}
+
+.contenido-textos a :hover {
+    color: orangered;
+}
+
+
+/*Slider o carrucel*/
+/*slider1*/
+.slider1 {
+    /*Tamaño o ancho de la imagen*/
+    width: 20%;
+    overflow: hidden;
+}
+
+.slider1 ul {
+    padding: 0;
+    display: flex;
+    width: 500%;
+    /*separacion desde la izquierda*/
+    margin-left: 0%;
+    animation: cambio 20s infinite alternate;
+    margin-top: 50px;
+}
+
+.slider1 li {
+    /*el ancho de las etiqueta li, si se elimina o se pone menor la imagen puede aparecer cortada*/
+    width: 900%;
+    list-style: none;
+}
+
+.slider1 img {
+    width: 100%;
+}
+
+/*slider2*/
+.slider2 {
+    /*Tamaño o ancho de la imagen*/
+    width: 20%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: -260px;
+    /*separacion*/
+    margin-left: 20%;
+}
+
+.slider2 ul {
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    /*secambia en base a la cantidad de imagenes, si es 4 seria 400% y asi*/
+    width: 500%;
+    /*necesario para darle una animacion*/
+    animation: cambio 20s infinite alternate;
+
+}
+
+.slider2 li {
+    width: 900%;
+    list-style: none;
+}
+
+.slider2 img {
+    width: 100%;
+}
+
+/*es la animacion, cada imagen dura entre 3.5s 
+y 4s siempre que la imagen se mueva a la izquierda, 
+para calcular se calcula el 15% de 20 eso es 3 para 
+la primera imagen, para la segunda imagen 35% de 20 eso seria 5s
+para que la segunda imagen aparesca luego son 7 para la tercera luego 9 
+para la cuarta imagen, luego 11s para la quita para que llegue ala izquierda
+para los 9s restantes son los que tarda en regresar a la primera imagen*/
+@keyframes cambio {
+    0% {
+        margin-left: 0%;
+    }
+
+    /*3s*/
+    15% {
+        margin-left: 0%;
+    }
+
+    /*5s*/
+    25% {
+        margin-left: -100%;
+    }
+
+    /*7s*/
+    35% {
+        margin-left: -100%;
+    }
+
+    /*9s*/
+    45% {
+        margin-left: -200%;
+    }
+
+    /*11s*/
+    55% {
+        margin-left: -200%;
+    }
+
+    /*13s*/
+    65% {
+        margin-left: -300%;
+    }
+
+    /*15s*/
+    75% {
+        margin-left: -300%;
+    }
+
+    /*17s*/
+    85% {
+        margin-left: -400%;
+    }
+
+    /*20s*/
+    100% {
+        margin-left: -400%;
+    }
+
+}
+
+/*slider3*/
+.slider3 {
+    /*Tamaño*/
+    width: 20%;
+    /*separacion*/
+    margin-left: 40%;
+    overflow: hidden;
+    margin-top: -320px;
+}
+
+.slider3 ul {
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    width: 500%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider3 li {
+    width: 900%;
+    list-style: none;
+}
+
+.slider3 img {
+    width: 100%;
+}
+
+/*slider4*/
+.slider4 {
+    /*Tamaño*/
+    width: 20%;
+    /*separacion*/
+    margin-left: 60%;
+    overflow: hidden;
+    margin-top: -320px;
+}
+
+.slider4 ul {
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    width: 500%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider4 li {
+    width: 900%;
+    list-style: none;
+}
+
+.slider4 img {
+    width: 100%;
+}
+
+/*slider5*/
+.slider5 {
+    /*Tamaño*/
+    width: 20%;
+    /*separacion*/
+    margin-left: 80%;
+    overflow: hidden;
+    /*separacion de arriba*/
+    margin-top: -280px;
+}
+
+.slider5 ul {
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    width: 500%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider5 li {
+    width: 900%;
+    list-style: none;
+}
+
+.slider5 img {
+    width: 100%;
+}
+
+
+section {
+    /*ayuda a controlar las secciones por partes*/
+    display: flex;
+    /*nos coloca los contenedores en columnas*/
+    flex-direction: column-reverse;
+    /*coloca las secciones ala izquierda es decir en el inicio*/
+    align-items: flex-start;
+}
+
+/*CAMBIAR FORMA DE LAS SECCIONES O SECTION*/
+.sect {
+    float: left;
+    background-color: aliceblue;
+    width: 300px;
+}
+
+
+
+/*TAMAÑO DE PANTALLA DE 800PX*/
+@media (max-width: 800px) {
+    #logo_inicio {
+        justify-content: center;
+        width: 350px;
+        height: 350px;
+    }
+
+    .menu {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 790px;
+    }
+
+}
+
+/*TAMAÑO DE PANTALLA DE 500PX*/
+@media (max-width: 500px) {
+    #logo_inicio {
+        justify-content: center;
+        width: 250px;
+        height: 250px;
+    }
+
+    .menu {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .slider1 {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .slider2 {
+        display: none;
+    }
+
+    .slider3 {
+        display: none;
+    }
+
+    .slider4 {
+        display: none;
+    }
+
+    .slider5 {
+        display: none;
+    }
+
+
+}
+
+/*TAMAÑO DE PANTALLA DE 300PX*/
+@media (max-width: 300px) {
+    #logo_inicio {
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slider1 {
+        width: 100%;
+        padding: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slider2 {
+        display: none;
+    }
+
+    .slider3 {
+        display: none;
+    }
+
+    .slider4 {
+        display: none;
+    }
+
+    .slider5 {
+        display: none;
+    }
+
+
+}
+
+
+/*footer*/
+footer {
+    background: #b0dafa;
+    padding-bottom: 0.1px;
+}
+
+.contact-us {
+    width: 40%;
+    color: #fff;
+}
+
+.brand {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.brand+p {
+    font-weight: 500;
+}
+
+
+:root {
+    --facebook: #3b5999;
+    --instagram: #e4405f;
+    --twitter: #55acee;
+}
+
+.redes-conteiner {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-conteiner ul li {
+    display: inline-block;
+    margin: 0 5px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.redes-conteiner ul li a {
+    display: block;
+    padding: 0 10px;
+    background-color: #333;
+    color: #fff;
+    line-height: 60px;
+    font-size: 20px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+    transition: 2s;
+}
+
+.redes-conteiner ul:hover a {
+    filter: blur(2px);
+}
+
+.redes-conteiner ul li a:hover {
+    transition: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
+    filter: none;
+}
+
+.redes-conteiner ul li .facebook:hover {
+    background: var(--facebook);
+}
+
+.redes-conteiner ul li .instagram:hover {
+    background: var(--instagram);
+}
+
+.redes-conteiner ul li .twitter:hover {
+    background: var(--twitter);
+}
